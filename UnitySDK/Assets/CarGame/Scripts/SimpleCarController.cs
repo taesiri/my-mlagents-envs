@@ -12,7 +12,7 @@ public class SimpleCarController : Agent
     private float initial_frontPassengerWmotorTorque;
     private Quaternion InitialCarRotation;
     public Transform TargetT;
-	private float initialY;
+    private float initialY;
 
     public override void InitializeAgent()
     {
@@ -46,6 +46,11 @@ public class SimpleCarController : Agent
             Done();
             SetReward(10f);
         }
+        else if (Mathf.Abs(transform.position.y - initialY) > 1f)
+        {
+            Done();
+            SetReward(-10f);
+        }
     }
 
     public override void AgentReset()
@@ -60,9 +65,13 @@ public class SimpleCarController : Agent
 
         gameObject.transform.rotation = InitialCarRotation;
 
-        TargetT.position = new
-            Vector3(Mathf.Sign(Random.Range(-10, 10)) * Random.Range(2f, 10f),
-                initialY, Mathf.Sign(Random.Range(-10, 10)) * Random.Range(2f, 10f));
+        TargetT.position = PointInCircle(4.99f, 30f);
+    }
+
+    public  Vector3 PointInCircle(float r1, float r2)
+    {
+		var v = Random.onUnitSphere * Random.Range(r1, r2);
+        return new Vector3(v.x, initialY, v.z);
     }
 
     public override float[] Heuristic()
@@ -131,7 +140,7 @@ public class SimpleCarController : Agent
         initial_frontPassengerWmotorTorque = frontPassengerW.motorTorque;
         InitialCarRotation = gameObject.transform.rotation;
 
-		initialY = TargetT.position.y;
+        initialY = TargetT.position.y;
     }
 
     private float m_horizontalInput;
