@@ -46,11 +46,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agentParameters:
-    maxStep: 150
+    maxStep: 50
     onDemandDecision: 0
     numberOfActionsBetweenDecisions: 1
   Radius: 4
-  CircleResolution: 150
+  CircleResolution: 50
   MainLine: {fileID: 206591974066098634}
   GeneratedPoints: []
   RoundCounter: 0
@@ -72,7 +72,7 @@ MonoBehaviour:
     vectorActionSize: 02000000
     vectorActionDescriptions: []
     vectorActionSpaceType: 1
-  m_Model: {fileID: 5022602860645237092, guid: ceae8d211c8fe464499aed6ee635813a, type: 3}
+  m_Model: {fileID: 5022602860645237092, guid: 1c1c4f25deb4fa2488cb2220f9b41b04, type: 3}
   m_InferenceDevice: 0
   m_BehaviorType: 0
   m_BehaviorName: DrawACircle

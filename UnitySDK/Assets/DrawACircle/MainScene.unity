@@ -2720,16 +2720,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 206591974066098632, guid: d9c9b1b99b5f2df4f92576b7a865b66d,
-        type: 3}
-      propertyPath: agentParameters.maxStep
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 206591974066098632, guid: d9c9b1b99b5f2df4f92576b7a865b66d,
-        type: 3}
-      propertyPath: CircleResolution
-      value: 50
-      objectReference: {fileID: 0}
     - target: {fileID: 206591974066098633, guid: d9c9b1b99b5f2df4f92576b7a865b66d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2794,7 +2784,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Model
       value: 
-      objectReference: {fileID: 5022602860645237092, guid: 1c1c4f25deb4fa2488cb2220f9b41b04,
+      objectReference: {fileID: 5022602860645237092, guid: ea409727d9457f545bf820695adeb778,
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d9c9b1b99b5f2df4f92576b7a865b66d, type: 3}
