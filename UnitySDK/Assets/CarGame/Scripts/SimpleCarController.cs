@@ -4,7 +4,6 @@ using MLAgents;
 public class SimpleCarController : Agent
 {
     private Vector3 initialPosition;
-
     private float initial_m_steeringAngle;
     private float initial_frontDriverWsteerAngle;
     private float initial_frontPassengerWsteerAngle;
@@ -12,7 +11,14 @@ public class SimpleCarController : Agent
     private float initial_frontPassengerWmotorTorque;
     private Quaternion InitialCarRotation;
     public Transform TargetT;
+
     private float initialY;
+
+    public bool DrawCharts = false;
+    public DummyChart ChartAccelaration;
+    public DummyChart ChartSteering;
+
+
 
     public override void InitializeAgent()
     {
@@ -38,6 +44,12 @@ public class SimpleCarController : Agent
         var actionX = 2f * Mathf.Clamp(vectorAction[0], -1f, 1f);
         var actionY = 2f * Mathf.Clamp(vectorAction[1], -1f, 1f);
 
+        if (DrawCharts)
+        {
+            ChartAccelaration.AddNewDataPoit(actionX);
+            ChartSteering.AddNewDataPoit(actionY);
+        }
+		
         m_horizontalInput = actionX;
         m_verticalInput = actionY;
 
@@ -68,9 +80,9 @@ public class SimpleCarController : Agent
         TargetT.position = PointInCircle(4.99f, 30f);
     }
 
-    public  Vector3 PointInCircle(float r1, float r2)
+    public Vector3 PointInCircle(float r1, float r2)
     {
-		var v = Random.onUnitSphere * Random.Range(r1, r2);
+        var v = Random.onUnitSphere * Random.Range(r1, r2);
         return new Vector3(v.x, initialY, v.z);
     }
 

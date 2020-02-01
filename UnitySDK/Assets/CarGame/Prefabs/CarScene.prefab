@@ -261,11 +261,21 @@ PrefabInstance:
       propertyPath: TargetT
       value: 
       objectReference: {fileID: 8490738363534909239}
+    - target: {fileID: 391268805110714560, guid: df8f7ba5a14db6d4cad81441da7382b0,
+        type: 3}
+      propertyPath: maxSteerAngle
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 391268805110714560, guid: df8f7ba5a14db6d4cad81441da7382b0,
+        type: 3}
+      propertyPath: motorForce
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 391268805110714591, guid: df8f7ba5a14db6d4cad81441da7382b0,
         type: 3}
       propertyPath: m_Model
       value: 
-      objectReference: {fileID: 5022602860645237092, guid: 233254db88fcf1b4bbc71e56a34f0c08,
+      objectReference: {fileID: 5022602860645237092, guid: c7998b9a23f1c0e4e802827df7bfb155,
         type: 3}
     - target: {fileID: 391268805110714591, guid: df8f7ba5a14db6d4cad81441da7382b0,
         type: 3}
