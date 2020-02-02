@@ -72,7 +72,7 @@ MonoBehaviour:
     vectorActionSize: 02000000
     vectorActionDescriptions: []
     vectorActionSpaceType: 1
-  m_Model: {fileID: 5022602860645237092, guid: 1c1c4f25deb4fa2488cb2220f9b41b04, type: 3}
+  m_Model: {fileID: 5022602860645237092, guid: ea409727d9457f545bf820695adeb778, type: 3}
   m_InferenceDevice: 0
   m_BehaviorType: 0
   m_BehaviorName: DrawACircle
@@ -129,8 +129,8 @@ LineRenderer:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 0.02734375
-        value: 0.29629517
+        time: 0.0078125
+        value: 0.03703308
         inSlope: 0
         outSlope: 0
         tangentMode: 0
