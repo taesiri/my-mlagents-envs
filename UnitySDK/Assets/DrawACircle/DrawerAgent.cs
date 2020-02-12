@@ -89,9 +89,53 @@ public class DrawerAgent : Agent
 
 
         // REWARD MODEL 2 --- ALL points must lie inbetween two circles
-        var lowerCircleR = 2.8f * 2.8f;
-        var higherCircleR = 3.2f * 3.2f;
+        // var lowerCircleR = 2.8f * 2.8f;
+        // var higherCircleR = 3.2f * 3.2f;
 
+        // var angleList = new float[CircleResolution];
+
+        // for (int i = 0; i < CircleResolution; i++)
+        // {
+        //     var d = GeneratedPoints[i].sqrMagnitude;
+
+        //     var x = GeneratedPoints[i].x;
+        //     var y = GeneratedPoints[i].y;
+
+        //     var angle = Vector3.Angle(new Vector3(0.0f, 1.0f, 0.0f), GeneratedPoints[i]);
+
+        //     if (x < 0.0f)
+        //     {
+        //         angle = -angle;
+        //         angle = angle + 360;
+        //     }
+        //     angleList[i] = angle;
+
+
+        //     if (d < lowerCircleR)
+        //     {
+        //         // Undershooting
+        //         reward -= 1f;
+        //     }
+        //     else if (d > lowerCircleR && d < higherCircleR)
+        //     {
+        //         // Just Perfect!
+        //         reward += 1f;
+        //     }
+        //     else if (d > higherCircleR)
+        //     {
+        //         //OverShooting
+        //         reward -= 1f;
+        //     }
+        //     else
+        //     {
+        //         Debug.Log("WTF!");
+        //     }
+        // }
+        // var std = getStandardDeviation(angleList);
+
+
+
+        // REWARD MODEL 3
         var angleList = new float[CircleResolution];
 
         for (int i = 0; i < CircleResolution; i++)
@@ -110,28 +154,10 @@ public class DrawerAgent : Agent
             }
             angleList[i] = angle;
 
-
-            if (d < lowerCircleR)
-            {
-                // Undershooting
-                reward -= 1f;
-            }
-            else if (d > lowerCircleR && d < higherCircleR)
-            {
-                // Just Perfect!
-                reward += 1f;
-            }
-            else if (d > higherCircleR)
-            {
-                //OverShooting
-                reward -= 1f;
-            }
-            else
-            {
-                Debug.Log("WTF!");
-            }
+            reward += Mathf.Abs(d - ((Radius * Radius) / 4));
         }
         var std = getStandardDeviation(angleList);
+
         return reward + std;
     }
 
@@ -146,7 +172,7 @@ public class DrawerAgent : Agent
 
         var sumOfDerivationAverage = sumOfDerivation / (floatList.Length - 1);
         var delta = (float)(sumOfDerivationAverage - (average * average));
-        
+
         return Mathf.Sqrt(delta);
     }
 
