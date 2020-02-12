@@ -172,6 +172,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2104669146486394175}
   - component: {fileID: 6973655862812512534}
+  - component: {fileID: 3747807052157008104}
   m_Layer: 0
   m_Name: DudeAgent
   m_TagString: Untagged
@@ -210,16 +211,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1c5da9a29dd86440ab4342a40c8fa86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  doRandomThings: 1
-  forceMultiplier: 25
+  agentParameters:
+    maxStep: 500
+    onDemandDecision: 0
+    numberOfActionsBetweenDecisions: 1
+  forceMultiplier: 200
   hip1Transform: {fileID: 2104669147518643384}
   hip2Transform: {fileID: 2104669147801098194}
   leg1Transform: {fileID: 2104669147038870926}
   leg2Transform: {fileID: 2104669146524108507}
   headTransform: {fileID: 2104669146501710924}
-  target: {fileID: 7174379993477372472}
   minDistance: 2
   floorTransform: {fileID: 2104669146583330980}
+  HeadScript: {fileID: 2453111310256604623}
+--- !u!114 &3747807052157008104
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2104669146486394160}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d1c4e0b1822b495aa52bc52839ecb30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_BrainParameters:
+    vectorObservationSize: 39
+    numStackedVectorObservations: 1
+    vectorActionSize: 04000000
+    vectorActionDescriptions: []
+    vectorActionSpaceType: 1
+  m_Model: {fileID: 0}
+  m_InferenceDevice: 0
+  m_BehaviorType: 0
+  m_BehaviorName: DudeAgent
+  m_TeamID: 0
+  m_useChildSensors: 1
 --- !u!1 &2104669146501710926
 GameObject:
   m_ObjectHideFlags: 0
@@ -232,6 +260,7 @@ GameObject:
   - component: {fileID: 2104669146501710925}
   - component: {fileID: 2104669146501710922}
   - component: {fileID: 2104669146501710923}
+  - component: {fileID: 2453111310256604623}
   m_Layer: 0
   m_Name: Head
   m_TagString: Untagged
@@ -352,6 +381,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &2453111310256604623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2104669146501710926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78d23cd7c2e3b3d4f8da4553491279c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HeadBottom: 0
 --- !u!1 &2104669146524108496
 GameObject:
   m_ObjectHideFlags: 0
@@ -534,7 +576,7 @@ Transform:
   m_GameObject: {fileID: 2104669146583330983}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 12, y: 3.5, z: 1}
+  m_LocalScale: {x: 100, y: 3.5, z: 1}
   m_Children: []
   m_Father: {fileID: 2104669147027420473}
   m_RootOrder: 1
@@ -1130,7 +1172,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7174379993477372472
 Transform:
   m_ObjectHideFlags: 0
