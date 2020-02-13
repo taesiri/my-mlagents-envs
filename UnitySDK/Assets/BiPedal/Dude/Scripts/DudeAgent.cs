@@ -29,7 +29,7 @@ public class DudeAgent : Agent
     private Quaternion _leg1StartRotation;
     private Quaternion _leg2StartRotation;
     private Quaternion _headInitialRotation;
-
+    private Rigidbody2D headRigidbody;
     public float minDistance = 2;
     private JointMotor2D _motor1;
     private JointMotor2D _motor2;
@@ -49,6 +49,8 @@ public class DudeAgent : Agent
         _hip2Rigidbody2D = hip2Transform.GetComponent<Rigidbody2D>();
         _leg1Rigidbody2D = leg1Transform.GetComponent<Rigidbody2D>();
         _leg2Rigidbody2D = leg2Transform.GetComponent<Rigidbody2D>();
+
+        headRigidbody = headTransform.GetComponent<Rigidbody2D>();
 
         _hip1StartPosition = hip1Transform.position;
         _hip2StartPosition = hip2Transform.position;
@@ -81,6 +83,9 @@ public class DudeAgent : Agent
         _leg1Rigidbody2D.angularVelocity = 0;
         _leg2Rigidbody2D.velocity = Vector2.zero;
         _leg2Rigidbody2D.angularVelocity = 0;
+
+        headRigidbody.velocity = Vector2.zero;
+        headRigidbody.angularVelocity = 0;
 
         // Reset Joints
         _motor1.motorSpeed = 0;
@@ -198,7 +203,7 @@ public class DudeAgent : Agent
         var reward = CalculateReward();
 
         // Reached target
-        if (reward > 10f)
+        if (reward > 200f)
         {
             SetReward(reward);
             Done();
@@ -230,7 +235,7 @@ public class DudeAgent : Agent
         //     return minDistance - dst;
         // return -dst;
 
-        return (headTransform.position.x - _headInitialPosition.x);
+        return (headTransform.position.x - _headInitialPosition.x)/2f;
     }
 
     public override float[] Heuristic()

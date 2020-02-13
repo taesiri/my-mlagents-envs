@@ -212,10 +212,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agentParameters:
-    maxStep: 500
+    maxStep: 1000
     onDemandDecision: 0
     numberOfActionsBetweenDecisions: 1
-  forceMultiplier: 200
+  forceMultiplier: 100
   hip1Transform: {fileID: 2104669147518643384}
   hip2Transform: {fileID: 2104669147801098194}
   leg1Transform: {fileID: 2104669147038870926}
@@ -242,7 +242,7 @@ MonoBehaviour:
     vectorActionSize: 04000000
     vectorActionDescriptions: []
     vectorActionSpaceType: 1
-  m_Model: {fileID: 0}
+  m_Model: {fileID: 5022602860645237092, guid: ba12516aaf012f5489bd2c410743f4c1, type: 3}
   m_InferenceDevice: 0
   m_BehaviorType: 0
   m_BehaviorName: DudeAgent
