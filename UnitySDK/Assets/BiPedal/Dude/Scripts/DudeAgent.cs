@@ -148,24 +148,22 @@ public class DudeAgent : Agent
 
     public override void CollectObservations()
     {
-        // 42
-
-        // Target Position Vector3
-        // AddVectorObs(target.position);
-
         // Position Vector3
         AddVectorObs(hip1Transform.position);
         AddVectorObs(hip2Transform.position);
         AddVectorObs(leg1Transform.position);
         AddVectorObs(leg2Transform.position);
-        AddVectorObs(headTransform.position);
 
         // Rotation Vector4
         AddVectorObs(hip1Transform.rotation);
         AddVectorObs(hip2Transform.rotation);
         AddVectorObs(leg1Transform.rotation);
         AddVectorObs(leg2Transform.rotation);
+
+        // Head Status
+        AddVectorObs(headTransform.position);
         AddVectorObs(headTransform.rotation);
+        AddVectorObs(headRigidbody.velocity);
 
         // Motor Speed (float)
         var motor1 = _hip1Joint.motor;
@@ -244,7 +242,7 @@ public class DudeAgent : Agent
 
         action[0] = Random.Range(-1f, 1f);
         action[1] = Random.Range(-1f, 1f);
-        action[2] = Random.Range(-1f, 1f);
+        action[2] = Input.GetAxis("Horizontal");
         action[3] = Random.Range(-1f, 1f);
 
         return action;

@@ -330,3 +330,19 @@ DudeAgent:
         extrinsic:
             strength: 1.0
             gamma: 0.995
+
+
+DudddeAgent:
+    normalize: true
+    num_epoch: 3
+    time_horizon: 1000
+    batch_size: 2048
+    buffer_size: 20480
+    max_steps: 1e7
+    summary_freq: 30000
+    num_layers: 3
+    hidden_units: 512
+    reward_signals:
+        extrinsic:
+            strength: 1.0
+            gamma: 0.995

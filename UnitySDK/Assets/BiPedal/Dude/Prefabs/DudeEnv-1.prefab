@@ -71,7 +71,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: f02e1f9b88f1e4c29a0cdb591fb87a5d, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -237,7 +237,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BrainParameters:
-    vectorObservationSize: 39
+    vectorObservationSize: 41
     numStackedVectorObservations: 1
     vectorActionSize: 04000000
     vectorActionDescriptions: []
@@ -276,8 +276,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2104669146501710926}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 6.999, z: 0}
-  m_LocalScale: {x: 2.1, y: 4, z: 1}
+  m_LocalPosition: {x: 0, y: 4.12, z: 0}
+  m_LocalScale: {x: 2.48, y: 4, z: 1}
   m_Children:
   - {fileID: 8160059871096244378}
   - {fileID: 8402636004864739551}
@@ -324,7 +324,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: f51e7c8191c2f7445b9adb2841e7b183, type: 3}
-  m_Color: {r: 0, g: 0.28157598, b: 0.5566038, a: 1}
+  m_Color: {r: 0.2047437, g: 0.32248566, b: 0.4056604, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -372,7 +372,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 1
-  m_Mass: 10.751999
+  m_Mass: 12.697599
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -421,13 +421,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2104669146524108496}
-  m_LocalRotation: {x: -0, y: -0, z: -0.38268343, w: 0.92387956}
-  m_LocalPosition: {x: -2.629, y: 3.3, z: -1}
-  m_LocalScale: {x: 0.40000004, y: 1, z: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.09, y: -0.7340002, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2104669146486394175}
   m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -45}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2104669146524108508
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -539,16 +539,16 @@ HingeJoint2D:
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
-  m_Anchor: {x: -0.000000059604645, y: 1.28}
-  m_ConnectedAnchor: {x: -0.03252691, y: -1.2783122}
+  m_Anchor: {x: 0, y: 1.285}
+  m_ConnectedAnchor: {x: 0, y: -1.2860003}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
     m_MaximumMotorForce: 10000
   m_UseLimits: 1
   m_AngleLimits:
-    m_LowerAngle: -45
-    m_UpperAngle: 135
+    m_LowerAngle: -1
+    m_UpperAngle: 65
 --- !u!1 &2104669146583330983
 GameObject:
   m_ObjectHideFlags: 0
@@ -717,13 +717,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2104669147038870912}
-  m_LocalRotation: {x: -0, y: -0, z: 0.38268343, w: 0.92387956}
-  m_LocalPosition: {x: 2.826, y: 3.305, z: 1}
-  m_LocalScale: {x: 0.40000004, y: 1, z: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.09, y: -0.7340002, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2104669146486394175}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 45}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2104669147038870927
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -835,16 +835,16 @@ HingeJoint2D:
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
-  m_Anchor: {x: -0.000000059604645, y: 1.28}
-  m_ConnectedAnchor: {x: 0.0028283596, y: -1.2797267}
+  m_Anchor: {x: 0, y: 1.285}
+  m_ConnectedAnchor: {x: 0, y: -1.2860003}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
     m_MaximumMotorForce: 10000
   m_UseLimits: 1
   m_AngleLimits:
-    m_LowerAngle: -45
-    m_UpperAngle: 135
+    m_LowerAngle: -1
+    m_UpperAngle: 65
 --- !u!1 &2104669147518643386
 GameObject:
   m_ObjectHideFlags: 0
@@ -872,13 +872,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2104669147518643386}
-  m_LocalRotation: {x: -0, y: -0, z: 0.38268343, w: 0.92387956}
-  m_LocalPosition: {x: 1.014, y: 5.113, z: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.09, y: 1.8369999, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2104669146486394175}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 45}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2104669147518643385
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -990,16 +990,16 @@ HingeJoint2D:
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
-  m_Anchor: {x: -0.020322416, y: 1.2818736}
-  m_ConnectedAnchor: {x: 0.044384956, y: -0.248487}
+  m_Anchor: {x: 0, y: 1.285}
+  m_ConnectedAnchor: {x: 0.036290325, y: -0.24950004}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
     m_MaximumMotorForce: 10000
   m_UseLimits: 1
   m_AngleLimits:
-    m_LowerAngle: -55
-    m_UpperAngle: 55
+    m_LowerAngle: -45
+    m_UpperAngle: 0
 --- !u!1 &2104669147801098199
 GameObject:
   m_ObjectHideFlags: 0
@@ -1027,13 +1027,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2104669147801098199}
-  m_LocalRotation: {x: -0, y: -0, z: -0.38268343, w: 0.92387956}
-  m_LocalPosition: {x: -0.797, y: 5.086, z: -1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.09, y: 1.8369999, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2104669146486394175}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -45}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2104669147801098195
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1145,16 +1145,16 @@ HingeJoint2D:
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
-  m_Anchor: {x: -0.020322416, y: 1.2818736}
-  m_ConnectedAnchor: {x: 0.045262564, y: -0.24805212}
+  m_Anchor: {x: 0, y: 1.285}
+  m_ConnectedAnchor: {x: 0.036290325, y: -0.24950004}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
     m_MaximumMotorForce: 10000
   m_UseLimits: 1
   m_AngleLimits:
-    m_LowerAngle: -55
-    m_UpperAngle: 55
+    m_LowerAngle: -45
+    m_UpperAngle: 0
 --- !u!1 &2104669148354878370
 GameObject:
   m_ObjectHideFlags: 0
