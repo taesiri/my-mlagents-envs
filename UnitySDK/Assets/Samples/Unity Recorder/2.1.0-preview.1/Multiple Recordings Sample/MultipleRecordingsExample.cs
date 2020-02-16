@@ -1,5 +1,6 @@
 #if UNITY_EDITOR
 
+using System;
 using System.IO;
 using UnityEditor;
 using UnityEditor.Recorder;
@@ -27,14 +28,15 @@ namespace UnityEngine.Recorder.Examples
 
             var mediaOutputFolder = Path.Combine(Application.dataPath, "..", "SampleRecordings");
             // animation output is an asset that must be created in Assets folder
-            Debug.Log(mediaOutputFolder);
+            var animationOutputFolder = Path.Combine(Application.dataPath, "SampleRecordings");
+
             // Video
             var videoRecorder = ScriptableObject.CreateInstance<MovieRecorderSettings>();
             videoRecorder.name = "My Video Recorder";
             videoRecorder.Enabled = true;
 
-            videoRecorder.OutputFormat = MovieRecorderSettings.VideoRecorderOutputFormat.MP4;
-            videoRecorder.VideoBitRateMode = VideoBitrateMode.Low;
+            videoRecorder.OutputFormat = MovieRecorderSettings.VideoRecorderOutputFormat.WebM;
+            videoRecorder.VideoBitRateMode = VideoBitrateMode.High;
 
             videoRecorder.ImageInputSettings = new GameViewInputSettings
             {
@@ -43,38 +45,17 @@ namespace UnityEngine.Recorder.Examples
             };
 
             videoRecorder.AudioInputSettings.PreserveAudio = true;
-
-            videoRecorder.OutputFile = Path.Combine(mediaOutputFolder, "video_v" + DefaultWildcard.Take);
-
-
-            // Image Sequence
-            var imageRecorder = ScriptableObject.CreateInstance<ImageRecorderSettings>();
-            imageRecorder.name = "My Image Recorder";
-            imageRecorder.Enabled = true;
-
-            imageRecorder.OutputFormat = ImageRecorderSettings.ImageRecorderOutputFormat.PNG;
-            imageRecorder.CaptureAlpha = true;
-
-            imageRecorder.OutputFile = Path.Combine(mediaOutputFolder, "_png", "image_v" + DefaultWildcard.Take + "." + DefaultWildcard.Frame);
-
-            imageRecorder.imageInputSettings = new CameraInputSettings
-            {
-                Source = ImageSource.MainCamera,
-                OutputWidth = 1920,
-                OutputHeight = 1080,
-                CaptureUI = true
-            };
-
+            var timeStamp = string.Format("{0:yyyy-MM-dd_hh-mm-ss-tt}", DateTime.Now);
+           videoRecorder.OutputFile = Path.Combine("C:\\Workspace\\Video Recorder\\", $@"Experiment-{timeStamp}");
             // Setup Recording
             controllerSettings.AddRecorderSettings(videoRecorder);
-            controllerSettings.AddRecorderSettings(imageRecorder);
 
             controllerSettings.SetRecordModeToManual();
             controllerSettings.FrameRate = 60.0f;
 
+            RecorderOptions.VerboseMode = false;
             m_RecorderController.StartRecording();
         }
-
 
         void OnDisable()
         {
